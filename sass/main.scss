@@ -1,0 +1,40 @@
+$primary-color: #0057b8;
+
+/* 1) Import the IBM Plex Sans and Plex Serif SCSS. 
+   - We point to the `index.scss` inside ibm-plex-sans/scss/.
+   - Then call `.all` or `.default` to generate the @font-face rules. */
+@use "../static/fonts/ibm-plex-sans/scss/index" as PlexSans;
+@use "../static/fonts/ibm-plex-serif/scss/index" as PlexSerif;
+
+/* For the broadest coverage, you can do `all`. 
+   Adjust $unicode-ranges to your needs. Commonly: ("Latin1") or ("Latin1", "Latin2"). */
+@include PlexSans.all($font-prefix: "fonts/ibm-plex-sans");
+
+
+/* Include all weights/styles for IBM Plex Serif. */
+@include PlexSerif.all($font-prefix: "fonts/ibm-plex-serif");
+
+/* 3) Now you can set defaults in your CSS. */
+body {
+  background: #fafafa;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #333;
+}
+
+h1 {
+  margin: 0;
+  /* If you like, you can use Plex Serif for headings. */
+  // use the italic version
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+}
+
+em, i {
+  font-family: "IBM Plex Serif", serif;
+  font-style: italic;
+}
+
+strong {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ config.title }} | {{ section.title }}</title>
+    <meta name="description" content="{{ section.description }}" />
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>{{ section.title }}</h1>
+    </header>
+    <main>{{ section.content | safe }}</main>
+  </body>
+</html>
